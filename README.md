@@ -1,3 +1,9 @@
+# My changes
+
+Because Luke Smith is no longer actively working on this project and does not accept the pull requests, I have created a fork myself so that I can merge the pull requests on my end.
+
+This fork fixed the leaking of the IP address when sending a mail and some other small things
+
 # Email server setup script
 
 I wrote this script during the grueling process of installing and setting up
@@ -11,7 +17,7 @@ I've linked this file on Github to a shorter, more memorable address on my
 website so you can get it on your machine with this short command:
 
 ```sh
-curl -LO lukesmith.xyz/emailwiz.sh
+/bin/sh -c "$(curl -fsSl https://raw.githubusercontent.com/yungsnowx/emailwiz/master/emailwiz.sh)"
 ```
 
 When prompted by a dialog menu at the beginning, select "Internet Site", then

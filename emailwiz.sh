@@ -99,6 +99,11 @@ postconf -e "smtpd_recipient_restrictions = permit_sasl_authenticated, permit_my
 # boomers want and no one else).
 postconf -e "home_mailbox = Mail/Inbox/"
 
+postconf -e "header_checks = regexp:/etc/postfix/header_checks"
+
+echo "/^Received:.*/     IGNORE
+/^X-Originating-IP:/    IGNORE" >> /etc/postfix/header_checks
+
 # master.cf
 echo "Configuring Postfix's master.cf..."
 

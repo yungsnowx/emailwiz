@@ -307,6 +307,9 @@ for x in spamassassin opendkim dovecot postfix; do
 	service "$x" restart && printf " ...done\\n"
 done
 
+# Start spamassassin
+systemctl enable --now spamassassin.service
+
 # If ufw is used, enable the mail ports.
 pgrep ufw >/dev/null && { ufw allow 993; ufw allow 465 ; ufw allow 587; ufw allow 25 ;}
 

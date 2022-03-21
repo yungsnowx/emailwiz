@@ -331,16 +331,16 @@ printf "\033[31m
 Add these three records to your DNS TXT records on either your registrar's site
 or your DNS server:
 \033[32m
-$dkimentry
+%s
 
-$dmarcentry
+%s
 
-$spfentry
+%s
 \033[0m
-NOTE: You may need to omit the \`.$domain\` portion at the beginning if
+NOTE: You may need to omit the \`.%s\` portion at the beginning if
 inputting them in a registrar's web interface.
 
 Also, these are now saved to \033[34m~/dns_emailwizard\033[0m in case you want them in a file.
 
 Once you do that, you're done! Check the README for how to add users/accounts
-and how to log in."
+and how to log in.\n" "$dkimentry" "$dmarcentry" "$spfentry" "$domain"
